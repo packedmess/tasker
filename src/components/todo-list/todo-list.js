@@ -6,7 +6,6 @@ import './todo-list.css';
 const TodoList = (props) => {
   
   const elements = props.todos.map((item) => {
-
     return (
       <li key={item.id}>
         <TodoListItem 
@@ -20,7 +19,22 @@ const TodoList = (props) => {
       </li>
     );
   });
+  
+  if (props.todos.length === 0) {
+    let label = 'Нет задач';
 
+    switch (props.filter) {
+      case 'active':
+        label = 'Нет активных задач';
+        break;
+      case 'done':
+        label = 'Нет завершенных задач';
+        break;
+      };
+
+    return <div className="todo-list--empty">{ label }</div>
+  };
+  
   return (
     <ul className="todo-list">
       { elements }
