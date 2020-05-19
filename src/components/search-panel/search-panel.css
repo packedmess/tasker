@@ -29,3 +29,9 @@
 .search-panel__input:focus+label {
 	color: rgba(0,0,0,.54);
 }
+
+@media (max-width: 567px) {
+	.search-panel {
+		margin: 0 0 10px 0;
+	}
+}

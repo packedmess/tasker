@@ -47,7 +47,14 @@ body {
 
 .top-panel {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: flex-end;
-	padding: 0 0 10px 0;
+}
+
+@media (max-width: 460px) {
+	body {
+		padding: 0;
+		font-size: 16px;
+	}
 }
